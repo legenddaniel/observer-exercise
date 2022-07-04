@@ -19,6 +19,7 @@ public class ObserverTest {
 		observers = new ArrayList<Observer>();
 		observers.add(new HexObserver(sub));
         observers.add(new OctObserver(sub));
+        observers.add(new BinObserver(sub));
 	}
 
 	@Test
@@ -26,5 +27,6 @@ public class ObserverTest {
         sub.setState(8);
         assertEquals(observers.get(0).getValue(), "8");
         assertEquals(observers.get(1).getValue(), "10");
+        assertEquals(observers.get(2).getValue(), "1000");
 	}
 }
